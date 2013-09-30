@@ -7,7 +7,7 @@ import Data.List (sort)
 import Data.Char (toLower)
 
 anagramsFor :: String -> [String] -> [String]
-anagramsFor word wordlist = filter (isAnagramOf word) wordlist
+anagramsFor = filter . isAnagramOf
 
 isAnagramOf :: String -> String -> Bool
 isAnagramOf word1 word2 = sort word1' == sort word2' && word1' /= word2'
