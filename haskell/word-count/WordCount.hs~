@@ -1,0 +1,24 @@
+module WordCount
+       (
+         wordCount
+       ) where
+
+import Data.Char (isAlphaNum, toLower)
+import Data.Map (insertWith, Map, empty)
+import Data.List.Split (wordsBy)
+
+-- Given an empty map,
+-- Insert with the key one by one.
+wordCount :: String -> Map String Int
+wordCount word = myInsert (process word) empty
+
+-- The insert process
+myInsert :: [String] -> Map String Int -> Map String Int
+myInsert [] map1 = map1
+myInsert (x:xs) map1 = myInsert xs (insertWith (+) x 1 map1)
+
+-- Format the given String
+process :: String -> [String]
+process word = wordsBy (not . isAlphaNum) $ map toLower word
+                
+                

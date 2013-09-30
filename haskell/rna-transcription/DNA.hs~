@@ -1,0 +1,9 @@
+module DNA
+       (
+       toRNA
+       ) where
+
+import Data.String.Utils
+
+toRNA :: String -> String
+toRNA = replace "T" "U"
