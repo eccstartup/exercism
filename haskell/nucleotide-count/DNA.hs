@@ -4,7 +4,7 @@ module DNA
          nucleotideCounts
        ) where
 
-import Data.Map (Map, fromList, insertWith)
+import Data.Map.Strict (Map, fromList, insertWith)
 import Data.List (foldl')
 
 count :: Char -> String -> Int
