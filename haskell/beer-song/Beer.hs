@@ -7,7 +7,8 @@ module Beer
 import Data.Char (toLower)
 
 verse :: Int -> String
-verse n = lyric1 n ++ obotw ++ ", " ++ lyric2 n ++ " of beer.\n" ++ lyric3 n ++ ", " ++ lyric2 (mod (n + 99) 100) ++ obotw ++ ".\n"
+verse n = lyric1 n ++ obotw ++ ", " ++ lyric2 n ++ " of beer.\n"
+          ++ lyric3 n ++ ", " ++ lyric2 (mod (n + 99) 100) ++ obotw ++ ".\n"
 
 lyric1 n
   | n == 0 = "No more bottles"
