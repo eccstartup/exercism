@@ -25,5 +25,5 @@ lyric3 n
 obotw = " of beer on the wall"
 
 sing :: Int -> Int -> String
-sing n m = unlines $ map verse (reverse [m..n])
+sing n m = unlines $ map verse [n,n-1..m]
 
