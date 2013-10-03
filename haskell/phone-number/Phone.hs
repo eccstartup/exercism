@@ -18,5 +18,7 @@ areaCode :: String -> String
 areaCode phoneno = take 3 $ number phoneno
 
 prettyPrint :: String -> String
-prettyPrint phoneno = "(" ++ take 3 pn ++ ") " ++ take 3 (drop 3 pn) ++ "-" ++ drop 6 pn
+prettyPrint phoneno = "(" ++ a ++ ") " ++ b ++ "-" ++ c
                     where pn = number phoneno
+                          (a, bc) = splitAt 3 pn
+                          (b, c) = splitAt 3 bc
